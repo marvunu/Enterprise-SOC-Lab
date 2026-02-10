@@ -44,7 +44,7 @@ The project includes:
 
 Each phase of the project is documented separately:
 
-- [Day 1 – Architecture & VPC Setup](./Day-1-Architecture-Setup/)
+- [Day 1 – Architecture & VPC Setup](https://github.com/marvunu/Enterprise-SOC-Lab/tree/main/Architecture-Setup)
 - [Day 2 – Server Deployment & Configuration](./Day-2-Server-Deployment/)
 - [Day 3 – Attack Simulation](./Day-3-Attack-Simulation/)
 - [Day 4 – Defense Implementation (WAF / Firewall)](./Day-4-Defense-Implementation/)
