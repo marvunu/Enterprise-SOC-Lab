@@ -10,6 +10,8 @@ A production-style cloud security lab designed to simulate real-world SOC operat
 
 This project documents the phased build of a cloud-based Security Operations Center (SOC), focusing on secure network architecture, detection engineering fundamentals, and incident response workflows.
 
+![Final Architecture Diagram](https://i.imgur.com/S1riNVl.png)
+
 ---
 
 ## 🔍 Project Focus Areas
