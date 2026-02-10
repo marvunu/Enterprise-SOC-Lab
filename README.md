@@ -117,8 +117,9 @@ This lab represents applied cybersecurity learning beyond theory.
 
 If you're interested in cloud security, SOC engineering, or collaborative security projects, feel free to connect.
 
-LinkedIn: *(add)*  
-Medium: *(add)*
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/marvin-unumadu-470273242)
+  
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@marvunumadu)
 
 ---
 
