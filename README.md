@@ -4,22 +4,31 @@
 
 A production-style cloud security lab implementing segmented VPC architecture, centralized log aggregation, and real-world attack simulation to develop SOC and cloud security engineering capabilities.
 
-This repository documents the phased build, detection workflows, architectural decisions, and lessons learned throughout the project.
-The objective of this project is to simulate a real-world security environment where I:
+# 🛡 Enterprise Cloud SOC Lab (AWS)
 
-- Deploy vulnerable systems
-- Simulate attacks
-- Implement defensive controls
-- Monitor and analyse logs
-- Produce incident response documentation
+A production-style cloud security lab designed to simulate real-world SOC operations using segmented AWS infrastructure, centralized log aggregation, and controlled attack simulation.
 
-This lab follows a structured, day-by-day build approach to reflect real enterprise deployment and security validation processes.
+This project documents the phased build of a cloud-based Security Operations Center (SOC), focusing on secure network architecture, detection engineering fundamentals, and incident response workflows.
+
+---
+
+## 🔍 Project Focus Areas
+
+- Custom VPC Architecture & Subnet Segmentation  
+- Public vs Private Infrastructure Isolation  
+- Internet Gateway & Route Table Configuration  
+- SIEM Deployment (Wazuh)  
+- Log Centralization & Analysis  
+- Attack Simulation & Detection Validation  
+- Cloud Security Hardening 
+
+This project follows a structured, day-by-day build approach to reflect real enterprise deployment and security validation processes.
 
 ---
 
 ## 🏗️ Lab Architecture
 
-The lab includes:
+The project includes:
 
 - AWS VPC with segmented networking
 - Ubuntu & Kali EC2 instances
@@ -33,7 +42,7 @@ The lab includes:
 
 ## 🗂️ Project Timeline
 
-Each phase of the lab is documented separately:
+Each phase of the project is documented separately:
 
 - [Day 1 – Architecture & VPC Setup](./Day-1-Architecture-Setup/)
 - [Day 2 – Server Deployment & Configuration](./Day-2-Server-Deployment/)
@@ -48,7 +57,7 @@ Each phase of the lab is documented separately:
 
 | Category | Tools |
 |----------|-------|
-| Cloud | AWS (Free Tier) |
+| Cloud | AWS  |
 | OS | Ubuntu Server, Kali Linux |
 | Web Apps | DVWA / PrestaShop |
 | Offensive Tools | Nmap, Metasploit |
