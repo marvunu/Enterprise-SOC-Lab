@@ -122,7 +122,7 @@ This ensures instances launched in this subnet do not receive public IP addresse
 
 The private subnet will later host SOC monitoring infrastructure (SIEM).
 
-![Ref 4: Private Subnet Settings](images/ref4.png)
+![Ref 4: Private Subnet Settings](https://i.imgur.com/z0eG7LP.png)
 
 ---
 
@@ -135,8 +135,8 @@ The private subnet will later host SOC monitoring infrastructure (SIEM).
 
 An Internet Gateway enables internet connectivity, but **only for resources explicitly routed to it**.
 
-![Ref 5: Internet Gateway Attachment](images/ref5.png)
-
+![Ref 5: Internet Gateway Attachment](https://i.imgur.com/YQfrNB1.png)
+![Ref 5: internet Gateway Attachment](https://i.imgur.com/2XBGBaW.png)
 ---
 
 ### Step 5 — Create the Public Route Table
@@ -150,6 +150,8 @@ An Internet Gateway enables internet connectivity, but **only for resources expl
 - Select `Public-Route-Table`
 - Routes → Edit routes
 - Add:
+Destination: 0.0.0.0/0
+Target: Internet Gateway (SOC-IGW)
 
 
 
@@ -162,7 +164,8 @@ An Internet Gateway enables internet connectivity, but **only for resources expl
 
 This explicitly grants internet access to the public subnet.
 
-![Ref 6: Public Route Table Configuration](images/ref6.png)
+![Ref 6: Public Route Table Configuration](https://i.imgur.com/ZfRm4RL.png)
+![Ref 6: Public Route Table Configuration](https://i.imgur.com/34aAvUo.png)
 
 ---
 
@@ -185,7 +188,7 @@ The private route table should contain **only**:
 
 There must be **no** route to the Internet Gateway.
 
-![Ref 7: Private Route Table Configuration](images/ref7.png)
+![Ref 7: Private Route Table Configuration](https://i.imgur.com/yh20ETN.png)
 
 ---
 
@@ -204,15 +207,15 @@ All checks confirm correct segmentation.
 
 ## 📝 Notes & Observations
 
-### AWS UI Behavior
+### AWS UI Behaviour
 
-During implementation, the following AWS UI behaviors were observed:
+During implementation, the following AWS UI behaviours were observed:
 
 - Subnet association is not performed during route table creation
 - Subnets must be explicitly associated after route table creation
 - Public IPv4 auto-assignment settings may need to be modified post-creation
 
-Understanding these behaviors helps avoid misconfiguration and reinforces architectural clarity.
+Understanding these behaviours helps avoid misconfiguration and reinforces architectural clarity.
 
 ---
 
