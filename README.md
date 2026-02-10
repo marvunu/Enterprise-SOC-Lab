@@ -12,6 +12,8 @@ This project documents the phased build of a cloud-based Security Operations Cen
 
 ![Final Architecture Diagram](https://i.imgur.com/GtlXR8w.png)
 
+*Final Architecture Diagram*
+
 ---
 
 ## 🔍 Project Focus Areas
