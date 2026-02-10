@@ -2,8 +2,9 @@
 
 ## 📌 Project Overview
 
-This repository documents my hands-on journey building an enterprise-style Security Operations Center (SOC) lab in AWS.
+A production-style cloud security lab implementing segmented VPC architecture, centralized log aggregation, and real-world attack simulation to develop SOC and cloud security engineering capabilities.
 
+This repository documents the phased build, detection workflows, architectural decisions, and lessons learned throughout the project.
 The objective of this project is to simulate a real-world security environment where I:
 
 - Deploy vulnerable systems
