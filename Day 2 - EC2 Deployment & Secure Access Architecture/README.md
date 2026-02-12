@@ -24,7 +24,7 @@ This phase reinforces workload placement awareness and access control best pract
 
 - Subnet-aware EC2 deployment
 - Security Group architecture design
-- Controlled exposure modeling
+- Controlled exposure modelling
 - SSH agent forwarding configuration
 - Bastion (jump host) access implementation
 - Troubleshooting AWS instance configuration issues
@@ -58,7 +58,7 @@ The SIEM server remains isolated from direct internet access.
 
 ## 📌 Ref 1: Day 2 Infrastructure Layout
 
-![Day 2 Infrastructure Diagram](images/day2-architecture.png)
+![Day 2 Infrastructure Diagram](https://i.imgur.com/GtlXR8w.png)
 
 ---
 
@@ -123,7 +123,11 @@ Restrict SIEM access to internal VPC traffic only.
 
 ## 📌 Ref 2: Security Group Rules
 
-![Security Groups](images/ref2.png)
+![Security Groups](https://i.imgur.com/KEUTSqK.png)
+![Security Groups](https://i.imgur.com/e9dXwB3.png)
+![Security Groups](https://i.imgur.com/28wSCVx.png)
+![Security Groups](https://i.imgur.com/5Tl7jZh.png)
+
 
 ---
 
@@ -176,9 +180,9 @@ This instance will host Wazuh Manager and centralized logging.
 
 ---
 
-## 📌 Ref 3: EC2 Instance Placement
+## 📌 Ref 3: EC2 Instances
 
-![EC2 Instance Overview](images/ref3.png)
+![EC2 Instance Overview](https://i.imgur.com/UdAEIRW.png)
 
 ---
 
