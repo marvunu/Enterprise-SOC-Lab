@@ -38,7 +38,7 @@ The project includes:
 - Ubuntu & Kali EC2 instances
 - Vulnerable web application (DVWA / PrestaShop)
 - Cowrie Honeypot
-- ELK Stack / Security Monitoring
+- Wazuh / Security Monitoring
 - ModSecurity (WAF)
 - Attack simulation using Nmap & Metasploit
 
@@ -66,7 +66,7 @@ Each phase of the project is documented separately:
 | Web Apps | DVWA / PrestaShop |
 | Offensive Tools | Nmap, Metasploit |
 | Defensive Tools | ModSecurity, UFW |
-| Monitoring | ELK Stack / Security Onion |
+| Monitoring | Wazuh |
 | Honeypot | Cowrie |
 
 ---
