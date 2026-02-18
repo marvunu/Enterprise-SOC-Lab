@@ -57,7 +57,7 @@ This phase validates that the SOC architecture is not only deployed — but oper
 ---
 
 ## Install Apache & PHP
-![Day 2 Infrastructure Diagram](https://i.imgur.com/36023bO.png)
+![Day 3](https://i.imgur.com/36023bO.png)
 ```bash
 sudo apt update
 sudo apt install apache2 php libapache2-mod-php php-mysqli -y
@@ -65,7 +65,7 @@ sudo apt install apache2 php libapache2-mod-php php-mysqli -y
 ```
 
 Verify Apache:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/Kf8lz0S.png)
+![Day 3](https://i.imgur.com/Kf8lz0S.png)
 ```bash
 sudo systemctl status apache2
 
@@ -81,7 +81,7 @@ sudo mysql_secure_installation
 ```
 
 Start MySQL:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/5rytGPC.png)
+![Day 3](https://i.imgur.com/5rytGPC.png)
 ```bash
 sudo mysql_secure_installation
 ```
@@ -89,7 +89,7 @@ sudo mysql_secure_installation
 ---
 
 ## Deploy DVWA
-![Day 2 Infrastructure Diagram](https://i.imgur.com/fOfiUFV.png)
+![Day 3](https://i.imgur.com/fOfiUFV.png)
 
 ```bash
 cd /var/www/html
@@ -105,14 +105,14 @@ sudo mysql -u root -p
 ```
 
 Inside MySQL:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/yIAcbOE.png)
+![Day 3](https://i.imgur.com/yIAcbOE.png)
 ```sql
 CREATE DATABASE dvwa;
 exit;
 ```
 
 Navigate to:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/XzZv2mX.png)
+![Day 3](https://i.imgur.com/XzZv2mX.png)
 ```
 http://<WebServerIP>/DVWA/setup.php
 ```
@@ -128,7 +128,7 @@ DVWA successfully deployed.
 ---
 
 ## Install Dependencies
-![Day 2 Infrastructure Diagram](https://i.imgur.com/TxDeAlo.png)
+![Day 3](https://i.imgur.com/TxDeAlo.png)
 ```bash
 sudo apt update
 sudo apt install git python3-venv python3-pip libssl-dev libffi-dev build-essential -y
@@ -173,7 +173,7 @@ listen_port = 2222
 ```
 
 Start Cowrie:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/QnAKqa3.png)
+![Day 3](https://i.imgur.com/QnAKqa3.png)
 ```bash
 cowrie start
 ```
@@ -191,7 +191,7 @@ cowrie status
 ---
 
 ## Install Wazuh Manager (SIEM Server)
-![Day 2 Infrastructure Diagram](https://i.imgur.com/4Nikmjj.png)
+![Day 3](https://i.imgur.com/4Nikmjj.png)
 ```bash
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 sudo bash wazuh-install.sh -a
@@ -200,13 +200,13 @@ sudo bash wazuh-install.sh -a
 ---
 
 ## Install Wazuh Agent (Web + Cowrie Servers)
-![Day 2 Infrastructure Diagram](https://i.imgur.com/25lTPO8.png)
+![Day 3](https://i.imgur.com/25lTPO8.png)
 ```bash
 sudo apt install wazuh-agent -y
 ```
 
 Configure manager IP in:
-![Day 2 Infrastructure Diagram](https://i.imgur.com/Dt11CZ6.png)
+![Day 3](https://i.imgur.com/Dt11CZ6.png)
 ```
 /var/ossec/etc/ossec.conf
 ```
@@ -222,19 +222,19 @@ Verify connection:
 ```bash
 sudo systemctl status wazuh-agent
 ```
-![Day 2 Infrastructure Diagram](https://i.imgur.com/jwGBGDA.png)
-![Day 2 Infrastructure Diagram](https://i.imgur.com/0xneYyW.png)
+![Day 3](https://i.imgur.com/jwGBGDA.png)
+![Day 3](https://i.imgur.com/0xneYyW.png)
 
 ---
 
 # 📥 Step 4 — Log Ingestion Configuration
 
-![Day 2 Infrastructure Diagram](https://i.imgur.com/SAR3sqY.png)
-
+![Day 3](https://i.imgur.com/SAR3sqY.png)
+Rule to detect SQL Injection on the SIEM
 ---
 
 ## Monitor Apache Logs (Web Server)
-![Day 2 Infrastructure Diagram](https://i.imgur.com/bKcScmf.png)
+![Day 3](https://i.imgur.com/bKcScmf.png)
 Inside `/var/ossec/etc/ossec.conf`:
 
 ```xml
@@ -259,6 +259,10 @@ sudo systemctl restart wazuh-agent
 ---
 
 ## Monitor Cowrie JSON Logs
+![Day 3](https://i.imgur.com/RemmHRw.png)
+![Day 3](https://i.imgur.com/KK14FzT.png)
+![Day 3](https://i.imgur.com/TPbedHj.png)
+Rules to detect attempted login, failed login attempt and successful login attempt into cowrie
 
 ```xml
 <localfile>
@@ -282,6 +286,7 @@ sudo systemctl restart wazuh-agent
 ## Phase 1 — SSH Brute Force (Cowrie)
 
 From Kali:
+![Day 3](https://i.imgur.com/eAal7F7.png)
 
 ```bash
 for i in {1..10}; do ssh root@<CowrieIP> -p 2222; done
@@ -298,12 +303,14 @@ Telemetry captured:
 ---
 
 ## Phase 2 — Successful Login Simulation
-
+![Day 3](https://i.imgur.com/QpELxMm.png)
 ```bash
 ssh root@<CowrieIP> -p 2222
 ```
 
 Generates:
+
+![Day 3](https://i.imgur.com/SjrNQlu.png)
 
 ```
 "eventid":"cowrie.login.success"
@@ -324,13 +331,14 @@ Payload:
 ```
 1 OR 1=1
 ```
+![Day 3](https://i.imgur.com/2SdPrIZ.png)
 
 Apache logs:
 
 ```
 GET /DVWA/vulnerabilities/sqli/?id=1+OR+1%3D1
 ```
-![Day 2 Infrastructure Diagram](https://imgur.com/DiwZO9a)
+![Day 3](https://i.imgur.com/DiwZO9a.png)
 
 ---
 
@@ -394,6 +402,8 @@ sudo systemctl restart wazuh-manager
 
 ---
 
+
+
 # 🔐 Security Posture After Day 3
 
 The environment now includes:
@@ -408,7 +418,6 @@ The environment now includes:
 The SOC is now operational.
 
 ---
-
 # ➡️ Next Phase (Day 4)
 
 * AWS WAF Deployment
@@ -420,3 +429,35 @@ The SOC is now operational.
 ---
 
 If this documentation helps replicate the environment, consider starring the repository.
+
+
+
+
+---
+---
+
+## 🛠 Issue 2 — SQL Injection Detection Not Firing
+
+**Symptom:**  
+Logs were visible in `archives.log`, but no alerts were generated in `alerts.log` or the Wazuh Dashboard.
+
+**Root Cause:**  
+Apache access logs were matching rule **31100** (a level 0 grouping rule).  
+The custom SQL injection rule was incorrectly chained to the wrong SID, so it never entered the correct rule inheritance chain.
+
+**Resolution:**  
+Used `wazuh-logtest` to identify the correct parent rule in production:
+
+```bash
+sudo /var/ossec/bin/wazuh-logtest
+After confirming the live parent rule, the custom rule was correctly attached to:
+
+<if_sid>31100</if_sid>
+Once chained to the proper SID, detection began firing immediately.
+
+Lesson Learned:
+Always identify the actual parent SID in production before chaining custom rules.
+Logtest output without full agent context can be misleading.
+
+
+
