@@ -63,7 +63,7 @@ Each phase of the project is documented separately:
 |----------|-------|
 | Cloud | AWS  |
 | OS | Ubuntu Server, Kali Linux |
-| Web Apps | DVWA / PrestaShop |
+| Web Apps | DVWA |
 | Offensive Tools | Nmap, Metasploit |
 | Defensive Tools | ModSecurity, UFW |
 | Monitoring | Wazuh |
