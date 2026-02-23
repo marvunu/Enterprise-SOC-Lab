@@ -421,10 +421,6 @@ The SOC is now operational.
 # ➡️ Next Phase (Day 4)
 
 * AWS WAF Deployment
-* Firewall Hardening
-* Rate Limiting
-* Geo-IP Blocking
-* Active Response Automation
 
 ---
 
@@ -436,7 +432,7 @@ If this documentation helps replicate the environment, consider starring the rep
 ---
 ---
 
-## 🛠 Issue 2 — SQL Injection Detection Not Firing
+## 🛠 Issue — SQL Injection Detection Not Firing
 
 **Symptom:**  
 Logs were visible in `archives.log`, but no alerts were generated in `alerts.log` or the Wazuh Dashboard.
