@@ -52,7 +52,7 @@ Each phase of the project is documented separately:
 - [Day 2 – Server Deployment & Configuration](./Day-2-Server-Deployment/)
 - [Day 3 – Aplication Deployment, Honeypot Setup & Attack Simulation](./Day-3-Attack-Simulation/)
 - [Day 4 – Defense Implementation (WAF / Firewall)](./Day-4-Defense-Implementation/)
-- [Day 5 – Log Monitoring & Threat Detection](./Day-5-Monitoring/)
+- [Day 5 – Log Monitoring](./Day-5-Monitoring/)
 - [Day 6 – Incident Response & Documentation](./Day-6-Incident-Response/)
 
 ---
